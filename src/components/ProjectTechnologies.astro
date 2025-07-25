@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+import { technologyIconMap } from "../data/technologyIcons";
+
+
+const { tecnologies } = Astro.props as { tecnologies: string[] };
+---
+
+{tecnologies.length > 0 && (
+  <div class="flex flex-wrap gap-2 mb-4">
+    {tecnologies.map((tech) => {
+      const icon = technologyIconMap[tech];
+      return (
+        <span class="flex items-center gap-2 bg-gray-700 text-xs px-3 py-1 rounded-full text-gray-200 font-medium shadow-sm">
+          {icon && (
+            <Image
+              src={icon}
+              alt={`${tech} icon`}
+              width={16}
+              height={16}
+              class="w-4 h-4 filter invert brightness-0 sepia saturate-100 hue-rotate-[200deg]"
+              loading="lazy"
+            />
+          )}
+          {tech}
+        </span>
+      );
+    })}
+  </div>
+)}
