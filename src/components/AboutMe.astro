@@ -1,0 +1,71 @@
+---
+import { Image } from "astro:assets";
+import { Github, Linkedin, Download } from "@lucide/astro";
+import perfil from "../assets/images/gabrielcipriano.jpg";
+
+const linkedinUrl = "https://linkedin.com/in/tuusuario";
+const githubUrl = "https://github.com/tuusuario";
+const cvUrl = "/cv/Gabriel_Cipriano_CV.pdf";
+---
+
+<section class="bg-gray-900 text-white px-6 md:px-12 py-24">
+  <div
+    class="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-12"
+  >
+    <!-- Foto -->
+    <Image
+      src={perfil}
+      alt="Gabriel Cipriano"
+      width={176}
+      height={176}
+      class="rounded-full object-cover border-4 border-amber-400 shadow-xl w-44 h-44 shrink-0"
+      format="webp"
+      loading="eager"
+    />
+
+    <!-- Info -->
+    <div class="text-center md:text-left w-full">
+      <div class="mb-6">
+        <p
+          class="text-sm uppercase tracking-wide text-amber-400 font-semibold mb-2"
+        >
+          Fullstack Developer
+        </p>
+        <h1
+          class="text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight"
+        >
+          Hola, soy <span class="text-amber-400">Gabriel Cipriano</span> 👋
+        </h1>
+        <p class="text-lg text-gray-300 leading-relaxed max-w-2xl">
+          Enfocado en construir <span class="text-white font-semibold"
+            >experiencias modernas</span
+          >, rápidas y accesibles. Me apasiona crear interfaces que no solo
+          funcionen bien, sino que se <span class="text-white font-medium"
+            >sientan bien</span
+          > al usarlas.
+        </p>
+      </div>
+
+      <!-- Iconos + acción -->
+
+      <div class="flex gap-4 justify-center items-center sm:justify-start">
+        <a href={githubUrl} aria-label="GitHub">
+          <Github class="w-6 h-6 text-white hover:text-amber-400 transition" />
+        </a>
+        <a href={linkedinUrl} aria-label="LinkedIn">
+          <Linkedin
+            class="w-6 h-6 text-white hover:text-amber-400 transition"
+          />
+        </a>
+        <a
+          href={cvUrl}
+          download
+          class="flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-500 text-gray-900 font-semibold px-5 py-2.5 rounded shadow-sm hover:shadow-md transition"
+        >
+          <Download class="w-5 h-5" />
+          Descargar CV
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
