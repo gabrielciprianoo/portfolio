@@ -5,12 +5,12 @@ import ProjectTechnologies from "./ProjectTechnologies.astro";
 import { Code, ExternalLink } from "@lucide/astro";
 import { Image } from "astro:assets";
 
-
 const { project } = Astro.props as { project: Project };
 const { image, name, resume, highlights, tecnologies, demoUrl, repoUrl } = project;
 ---
-
-<article class="bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-all p-6 flex flex-col h-full border border-gray-700">
+<article
+  class="bg-gray-800 rounded-2xl shadow-md hover:shadow-xl hover:scale-[1.015] transition-all duration-300 ease-in-out p-6 flex flex-col h-full border border-gray-700 opacity-0 animate-fade-in-up"
+>
   <Image
     src={image}
     alt={`Preview de ${name}`}
@@ -31,7 +31,7 @@ const { image, name, resume, highlights, tecnologies, demoUrl, repoUrl } = proje
     <a
       href={demoUrl}
       target="_blank"
-      class="text-amber-400 hover:text-amber-300 font-semibold text-sm inline-flex items-center gap-1"
+      class="text-amber-400 hover:text-amber-300 font-semibold text-sm inline-flex items-center gap-1 transition-colors"
     >
       <ExternalLink class="w-4 h-4" />
       Ver demo
@@ -39,10 +39,11 @@ const { image, name, resume, highlights, tecnologies, demoUrl, repoUrl } = proje
     <a
       href={repoUrl}
       target="_blank"
-      class="text-gray-300 hover:text-white font-semibold text-sm inline-flex items-center gap-1"
+      class="text-gray-300 hover:text-white font-semibold text-sm inline-flex items-center gap-1 transition-colors"
     >
       <Code class="w-4 h-4" />
       Ver código
     </a>
   </div>
 </article>
+
