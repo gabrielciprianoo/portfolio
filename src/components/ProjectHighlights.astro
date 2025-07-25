@@ -1,0 +1,15 @@
+---
+import { CheckCircle } from "@lucide/astro";
+const { highlights } = Astro.props as { highlights: string[] };
+---
+
+{highlights.length > 0 && (
+  <ul class="text-sm text-gray-300 space-y-2 mb-4">
+    {highlights.map((item) => (
+      <li class="flex items-start gap-2">
+        <CheckCircle class="w-4 h-4 text-amber-400 mt-0.5" />
+        <span>{item}</span>
+      </li>
+    ))}
+  </ul>
+)}
