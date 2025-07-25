@@ -3,13 +3,15 @@ import type { Project } from "../data/projects";
 import ProjectHighlights from "./ProjectHighlights.astro";
 import ProjectTechnologies from "./ProjectTechnologies.astro";
 import { Code, ExternalLink } from "@lucide/astro";
+import { Image } from "astro:assets";
+
 
 const { project } = Astro.props as { project: Project };
 const { image, name, resume, highlights, tecnologies, demoUrl, repoUrl } = project;
 ---
 
 <article class="bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-all p-6 flex flex-col h-full border border-gray-700">
-  <img
+  <Image
     src={image}
     alt={`Preview de ${name}`}
     class="rounded-lg mb-5 aspect-video object-cover border border-gray-700"

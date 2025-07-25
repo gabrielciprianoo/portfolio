@@ -1,6 +1,6 @@
 export type Project = {
   name: string;
-  image: string;
+  image: ImageMetadata;
   tecnologies: string[];
   resume: string;
   highlights: string[];
@@ -8,10 +8,12 @@ export type Project = {
   repoUrl: string;
 };
 
+import drinkyImage from '../assets/images/drinky-preview.png'
+
 export const projects : Project[] = [
     {
         name : "Drinky",
-        image: "/images/drinky-preview.png",
+        image: drinkyImage,
         tecnologies: ['React JS', 'Tailwind', 'Typescript'],
         resume: "Aplicacion que permite buscar recetas de bebidas basandose en ingredientes y puede generar recetas con IA",
         highlights: ['Estado Global con Zustand', 'Validacion con Valibot', 'OpenAI API'],
@@ -20,7 +22,7 @@ export const projects : Project[] = [
     },
     {
         name : "Drinky",
-        image: "/images/drinky-preview.png",
+        image: drinkyImage,
         tecnologies: ['React JS', 'Tailwind', 'Typescript'],
         resume: "Aplicacion que permite buscar recetas de bebidas basandose en ingredientes y puede generar recetas con IA",
         highlights: ['Estado Global con Zustand', 'Validacion con Valibot', 'OpenAI API'],
